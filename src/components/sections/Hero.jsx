@@ -300,7 +300,7 @@ export default function Hero() {
                 <img
                   src={iPhone}
                   alt="iPhone background"
-                  className="absolute md:bottom-[9%] bottom-[28%] w-[200px] sm:w-[260px] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
+                  className="absolute md:bottom-[3%] bottom-[28%] w-[200px] sm:w-[260px] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
                 />
 
                 {/* Composant Vision qui s'agrandit au scroll */}
@@ -311,7 +311,7 @@ export default function Hero() {
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                   }}
-                  className="absolute bottom-0 sm:bottom-[-3%] left-1/2 -translate-x-1/2 overflow-hidden z-30 pointer-events-auto"
+                  className="absolute bottom-0 sm:bottom-[-10%] left-1/2 -translate-x-1/2 overflow-hidden z-30 pointer-events-auto"
                 >
                   <Vision
                     overlayOpacity={visionOverlayOpacity}
