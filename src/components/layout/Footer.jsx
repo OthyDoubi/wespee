@@ -37,6 +37,9 @@ import {
 // Hook de traduction pour les textes multilingues
 import { useTranslation } from "react-i18next";
 
+// Hook pour détecter la page courante
+import { useLocation } from "react-router-dom";
+
 // -----------------------------------------------------------------------------
 // COMPOSANT FOOTER
 // -----------------------------------------------------------------------------
@@ -53,12 +56,14 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
   // Hook de traduction
   const { t } = useTranslation();
-  
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <footer className="bg-wespee-white border-t border-black/10 mb-20">
-      {/* 
-        mb-20 : Marge en bas pour éviter que le contenu soit caché
-        par le bouton de téléchargement fixe sur mobile
+    <footer className={`bg-wespee-white border-t border-black/10 ${isHomePage ? "mb-20" : ""}`}>
+      {/*
+        mb-20 : Marge en bas uniquement sur la HomePage pour éviter
+        que le contenu soit caché par le bouton de téléchargement fixe
       */}
       
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-6">

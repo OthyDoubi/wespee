@@ -161,7 +161,7 @@ export default function Telechargement() {
           
           Layout : Éléments empilés verticalement, centrés
           ===================================================================== */}
-      <div className="md:hidden h-[calc(100dvh-250px)] flex flex-col items-center justify-center px-4 sm:px-6 text-center gap-4 sm:gap-5 md:gap-6">
+      <div className="md:hidden min-h-[calc(100svh-90px)] flex flex-col items-center justify-center px-4 sm:px-6 text-center gap-3 sm:gap-4">
 
         {/* -----------------------------------------------------------------
             TITRE MOBILE
@@ -242,7 +242,7 @@ export default function Telechargement() {
         <img
           src={PhonePeople}
           alt="Wespee app"
-          className="w-[220px] xs:w-[240px] sm:w-[260px] mt-4 sm:mt-6"
+          className="w-[200px] xs:w-[220px] sm:w-[260px] max-h-[28vh] object-contain"
         />
       </div>
 
@@ -253,7 +253,7 @@ export default function Telechargement() {
           
           Layout : Image à gauche, contenu à droite
           ===================================================================== */}
-      <div className="hidden md:flex h-[calc(100dvh-250px)] items-center justify-center px-6 lg:px-10">
+      <div className="hidden md:flex min-h-[calc(100svh-90px)] items-center justify-center px-6 lg:px-10">
         <div className="max-w-7xl w-full flex items-center justify-between gap-8">
 
           {/* -----------------------------------------------------------------
