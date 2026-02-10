@@ -67,6 +67,7 @@ export default function App() {
     AOS.init({
       duration: 700,              // Durée des animations en millisecondes
       easing: "ease-out-cubic",   // Type d'accélération de l'animation
+      once: true,                 // Les animations ne se jouent qu'une seule fois
     });
   }, []); // [] = ne s'exécute qu'une fois au montage du composant
 

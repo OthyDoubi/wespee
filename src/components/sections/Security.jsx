@@ -32,8 +32,8 @@
 // Framer Motion pour les animations
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Lenis : Bibliothèque pour un scroll fluide et naturel
-import ReactLenis from "lenis/react";
+// Lenis : Bibliothèque pour un scroll fluide et naturel (non utilisée - conflit avec AOS)
+// import ReactLenis from "lenis/react";
 
 // Hook React pour les références DOM et effets
 import { useRef, useEffect, useState } from "react";
@@ -250,9 +250,7 @@ export default function Security() {
   // ---------------------------------------------------------------------------
 
   return (
-    // ReactLenis : Active le scroll fluide pour cette section
-    <ReactLenis root>
-      <motion.section
+    <motion.section
         style={{ backgroundColor }}
         className="py-16 transition-colors"
       >
@@ -391,7 +389,6 @@ export default function Security() {
             </div>
           </Card>
         </div>
-      </motion.section>
-    </ReactLenis>
+    </motion.section>
   );
 }
