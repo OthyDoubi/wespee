@@ -1,0 +1,129 @@
+/*
+=============================================================================
+INDEX.CSS - Styles globaux et polices personnalisees
+=============================================================================
+
+Ce fichier contient:
+1. Les declarations @font-face pour la police "Athletics"
+2. Les imports Tailwind CSS (base, components, utilities)
+3. Les styles globaux du body
+
+POLICES - FAMILLE "ATHLETICS"
+
+La police Athletics est la police principale de Wespee.
+Elle est declaree en plusieurs graisses (weights) et styles.
+
+GRAISSES DISPONIBLES:
+- 400 = Regular (normal)
+- 500 = Medium (font-medium dans Tailwind)
+- 700 = Bold (font-bold dans Tailwind)
+- 800 = ExtraBold (font-extrabold dans Tailwind)
+- 900 = Black (font-black dans Tailwind)
+
+EMPLACEMENT DES FICHIERS DE POLICE: public/fonts/Athletics/
+=============================================================================
+*/
+
+/* ATHLETICS REGULAR (400) - Texte courant, paragraphes */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ATHLETICS MEDIUM (500) - Titres legers, sous-titres */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* ATHLETICS BOLD (700) - Titres, mise en valeur */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ATHLETICS EXTRABOLD (800) - Titres tres importants */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* ATHLETICS BLACK (900) - Titres de section, impact maximal */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ========== VARIANTES ITALIQUES ========== */
+
+/* ATHLETICS REGULAR ITALIC (400) - Citations, texte en emphase */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Regular-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ATHLETICS MEDIUM ITALIC (500) - Sous-titres en italique */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Medium-Italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ATHLETICS BOLD ITALIC (700) - "its your world" dans le branding */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Bold-Italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ATHLETICS EXTRABOLD ITALIC (800) */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-ExtraBold-Italic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* ATHLETICS BLACK ITALIC (900) */
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics/Athletics-Black-Italic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/*
+=============================================================================
+IMPORTS TAILWIND CSS - Ces trois lignes sont OBLIGATOIRES
+=============================================================================
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+=============================================================================
+STYLES GLOBAUX DU BODY
+Police par defaut pour tout le site
+=============================================================================
+*/
+
+body {
+  font-family: "Athletics", sans-serif;
+  background-color: #FEFFFB;
+}

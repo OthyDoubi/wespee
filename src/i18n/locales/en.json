@@ -1,0 +1,139 @@
+{ 
+  "navbar": {
+    "banner": "Wespee is invite-only. Drop your code, get your friends on board, and earn 10 XOF every time they pay.",
+    "cta": "Download the app"
+  },
+  "hero": {
+    "tagline": "Mobile Money, reimagined.",
+    "title": {
+      "line1": "Wespee — all your",
+      "line2": "world in one app,",
+      "highlight": "it’s your world."
+    },
+    "description": {
+      "line1": "Your money, differently. Better.",
+      "line2": "With Wespee: send, pay, enjoy."
+    }
+  },
+  "vision": {
+    "tagline": "Wespee for everything, everywhere.",
+    "title-line1": "We are rethinking",
+    "title-line2":"how you use",
+    "title-line3":"mobile money",
+    "title-line4":"every day."
+  },
+  "security": {
+    "header": {
+      "tagline": "Wespee — Essential protection for your money.",
+      "title1": "Your new secure",
+      "title2": "shield."
+    },
+    "cards": {
+      "1": {
+        "text": "Every day, users fall victim to mobile money scams: fake SMS, \"customer service\" calls, identity theft… Why? Because with every transaction, your phone number circulates and can end up in the wrong hands. And often, that’s all a scammer needs."
+      },
+      "2": {
+        "text": "To protect you, with Wespee your personal information stays confidential with every transaction. Sign up, choose a unique identifier that replaces your phone number, and use it to send and receive money. Simple and secure."
+      },
+      "3": {
+        "text": "Wespee is committed to protecting your data and transactions. Thanks to our next-generation security methods, your payments are safe and you stay at ease. Every transfer, purchase, and money send benefits from advanced protection designed to give you confidence every day.",
+        "caption": "Security is not a myth."
+      }
+    }
+  },
+  "features": {
+    "tagline": "Everything to help you save time",
+    "title-line1": "One App",
+    "title-line2": "for everything.",
+    "description": "You can now unify all your mobile money accounts in one place to send, receive, spend, and track your expenses without switching between apps. With Wespee, everything happens in one click and you save time.",
+    "disclaimer": "*Wespee can never withdraw money from your Mobile Money accounts without your consent."
+  },
+  "connectivity": {
+    "tagline": "Do more with your money",
+    "title": "Even more<br/>connected",
+    "description": "Wespee is your new world: more modern, more fun, with a unique user experience. Discover new features and innovative ways to use your money.<br/><br/>All your services are connected together in a single ecosystem that simplifies your life and gives you more freedom every day."
+  },
+  "community": {
+    "download": "Download the Wespee app"
+  },
+  "conditions": {
+    "title": "Terms of Use",
+    "items": {
+      "1": {
+        "title": "Acceptance of terms",
+        "text": "By creating an account and using Wespee, you agree to all of our terms and conditions. They define your rights and obligations, as well as those of Wespee, to ensure a reliable and secure service."
+      },
+      "2": {
+        "title": "Account creation and eligibility",
+        "text": "To register, you must provide a valid phone number, a mandatory referral code, and link at least one Mobile Money account. Without these elements, your account cannot be activated."
+      },
+      "3": {
+        "title": "Security and transaction protection",
+        "text": "All your operations are protected by enhanced authentication (OTP, PIN code) and data encryption to prevent fraud or unauthorized use."
+      },
+      "4": {
+        "title": "Fees and associated costs",
+        "text": "Each transaction made via Wespee incurs a fixed fee of 50 XOF. Additional fees may apply depending on Mobile Money operators or integrated partners."
+      },
+      "5": {
+        "title": "Referral program",
+        "text": "A user can refer others using a unique code. The referrer earns 10 XOF on each transaction made by the referred user during their first uses."
+      },
+      "6": {
+        "title": "Data usage and confidentiality",
+        "text": "Your personal information is handled in accordance with data protection regulations. Wespee never sells your data."
+      },
+      "7": {
+        "title": "User responsibility",
+        "text": "You are responsible for keeping your credentials confidential. Any action performed from your account is your responsibility."
+      },
+      "8": {
+        "title": "Mobile Money account management",
+        "text": "You can link up to four Mobile Money accounts to your profile. Each addition requires authentication to ensure security."
+      },
+      "9": {
+        "title": "Fraud monitoring and prevention",
+        "text": "In case of suspicious activity, Wespee may suspend or block an account, request verification documents, or permanently close the account."
+      },
+      "10": {
+        "title": "Updates and changes",
+        "text": "The terms may evolve according to regulations or service needs. Continued use implies acceptance of the updated rules."
+      }
+    },
+    "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved"
+    }
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved"
+  },
+  "cta": {
+    "download": "Download the app"
+  },
+  "download": {
+    "title": "Get the\nWespee app",
+    "titleDesktop-line1": "Get",
+    "titleDesktop-line2": "the Wespee",
+    "titleDesktop-line3": "app",
+    "subtitle": "Download the application",
+
+    "appStore": {
+      "small": "Download on the",
+      "big": "App Store"
+    },
+
+    "playStore": {
+      "small": "Available on",
+      "big": "Google Play"
+    },
+
+    "qrText-line1": "Scan the QR code",
+    "qrText-line2": "to download",
+    "qrText-line3": "the app"
+  }
+
+}
