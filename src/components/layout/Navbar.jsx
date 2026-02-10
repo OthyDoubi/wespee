@@ -61,7 +61,7 @@ export default function Header() {
           BANNIÈRE PROMOTIONNELLE
           Fond violet (#A991F3) avec message sur le parrainage
           =================================================================== */}
-      <div className="font-athletics min-h-[40px] h-auto font-medium p-5 bg-[#A991F3] text-[#121212] text-[14px] sm:text-xs md:text-sm text-center py-2 sm:px-4 md:px-8 lg:px-16 flex items-center justify-center">
+      <div className="font-athletics min-h-[36px] h-auto font-medium px-4 py-1.5 sm:px-4 md:px-8 lg:px-16 bg-[#A991F3] text-[#121212] text-[12px] sm:text-xs md:text-sm text-center flex items-center justify-center">
         {/* 
           t("navbar.banner") affiche :
           - FR: "L'accès à Wespee se fait uniquement par parrainage..."
@@ -74,7 +74,7 @@ export default function Header() {
           BARRE DE NAVIGATION
           Contient le logo et le bouton CTA
           =================================================================== */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 sm:pt-4 pb-1 sm:pb-0 flex items-center justify-between">
         
         {/* -----------------------------------------------------------------
             LOGO WESPEE

@@ -1,0 +1,138 @@
+{
+  "navbar": {
+    "banner": "L’accès à Wespee se fait uniquement par parrainage : invitez vos proches et recevez 10 XOF à chaque transaction.",
+    "cta": "Télécharger l’application"
+  },
+  "hero": {
+    "tagline": "Le Mobile Money Autrement.",
+    "title": {
+      "line1": "Wespee — tout ton",
+      "line2": "univers dans une app,",
+      "highlight": "it’s your world."
+    },
+    "description": {
+      "line1": "Ton argent, autrement. En mieux.",
+      "line2": "Avec Wespee : envoie, paye, profite."
+    }
+  },
+  "vision": {
+    "tagline": "Wespee pour tout et partout.",
+    "title-line1": "Nous repensons la",
+    "title-line2":"façon dont tu utilises",
+    "title-line3":"ton Mobile Money au",
+    "title-line4":"quotidien."
+  },
+  "security": {
+    "header": {
+      "tagline": "Wespee — La protection essentielle pour votre argent.",
+      "title1": "Ton nouveau bouclier",
+      "title2" :"sécurisé."
+    },
+    "cards": {
+      "1": {
+        "text": "Chaque jour, des utilisateurs se font piéger sur le mobile money : faux SMS, appels « service client », usurpations d’identité… Pourquoi ? Parce qu’à chaque transaction, votre numéro de téléphone circule et peut finir entre de mauvaises mains. Et c’est souvent tout ce dont un fraudeur a besoin pour vous piéger."
+      },
+      "2": {
+        "text": "Pour te protéger, désormais avec Wespee, tes informations personnelles restent confidentielles à chaque transaction. Inscris-toi, choisis l’identifiant unique de ton choix, qui remplacera ton numéro de téléphone lors de tes transactions. Partage-le pour envoyer et recevoir de l’argent. C’est simple et sécurisé."
+      },
+      "3": {
+        "text": "Wespee s’engage à protéger vos données et vos transactions. Grâce à nos méthodes de sécurité NextGen, vos paiements sont sûrs et vous gardez l’esprit tranquille. Chaque transfert, chaque achat et chaque envoi d’argent bénéficie d’une protection avancée, conçue pour vous garantir confiance et sérénité au quotidien.",
+        "caption": "La sécurité n'est pas un mythe."
+      }
+    }
+  },
+  "features": {
+    "tagline": "Tout pour te faire gagner en temps",
+    "title-line1": "Une App",
+    "title-line2" : "pour tout.",
+    "description": "Désormais, tu peux unifier tous tes comptes mobile money en un seul endroit pour payer et être payé sans te soucier de l'opérateur. Tu peux également dépenser et suivre tes dépenses sans passer par plusieurs applications. Avec Wespee, tout se fait dans une seule app pour te faire gagner du temps.",
+    "disclaimer": "*Wespee ne peut en aucun cas prélever de l'argent sur vos comptes Mobile Money sans votre accord."
+  },
+  "connectivity": {
+    "tagline": "Fait plus avec ton argent",
+    "title": "Encore plus<br/>connectée",
+    "description": "Wespee, c’est ton nouveau monde : plus moderne, plus fun et avec une expérience utilisateur unique. Découvre de nouvelles fonctionnalités et des façons innovantes d’utiliser ton argent.<br/><br/>Tous tes services sont connectés entre eux, dans un seul écosystème qui simplifie ta vie et t’offre plus de liberté au quotidien."
+  },
+  "community": {
+    "download": "Télécharger l’application Wespee"
+  },
+  "conditions": {
+    "title": "Conditions d’utilisation",
+    "items": {
+      "1": {
+        "title": "<b>Acceptation des conditions</b>",
+        "text": "En créant un compte et en utilisant Wespee, vous acceptez l'ensemble de nos conditions générales. Elles encadrent vos droits et obligations, ainsi que ceux de Wespee, pour garantir un service fiable et sécurisé."
+      },
+      "2": {
+        "title": "Création de compte et éligibilité",
+        "text": "<b>Pour vous inscrire, vous devez fournir un numéro de téléphone valide, un code de parrainage obligatoire et lier au moins un compte Mobile Money.</b> Sans ces éléments, votre compte ne peut pas être activé."
+      },
+      "3": {
+        "title": "Sécurité et protection des transactions",
+        "text": "Toutes vos opérations sont protégées par un système d'authentification renforcé (OTP, code PIN) et un chiffrement des données. Ces mesures visent à éviter toute fraude ou utilisation non autorisée de votre compte."
+      },
+      "4": {
+        "title": "Frais et coûts associés",
+        "text": "<b>Chaque transaction effectuée via Wespee entraîne un frais fixe de 50 XOF</b>. Des frais supplémentaires peuvent s'appliquer en fonction des opérateurs Mobile Money ou agrégateurs partenaires."
+      },
+      "5": {
+        "title": "Programme de parrainage",
+        "text": "Un utilisateur peut parrainer des filleuls grâce à un code unique. <b>Le parrain perçoit 10 XOF sur chaque transaction réalisée par le filleul dès sa première utilisation effective de l'application.</b>"
+      },
+      "6": {
+        "title": "Utilisation et confidentialité des données",
+        "text": "Vos informations personnelles sont collectées uniquement pour fournir nos services et sont traitées conformément à la loi ivoirienne sur la protection des données personnelles. <b>Nous ne revendons jamais vos données.</b>"
+      },
+      "7": {
+        "title": "Responsabilité de l'utilisateur",
+        "text": "Vous êtes responsable de la confidentialité de vos identifiants et de toutes les actions effectuées depuis votre compte. Toute négligence ou partage de vos codes engage votre responsabilité."
+      },
+      "8": {
+        "title": "Gestion des comptes Mobile Money",
+        "text": "<b>Un compte Mobile Money ne peut être lié qu'à un seul profil Wespee.</b> Vous pouvez lier jusqu'à 4 comptes à votre profil, mais chaque ajout nécessite une authentification pour garantir votre sécurité."
+      },
+      "9": {
+        "title": "Contrôle et lutte contre la fraude",
+        "text": "En cas d'activité suspecte ou d'utilisation frauduleuse, Wespee peut suspendre ou bloquer votre compte, demander des justificatifs d'identité ou, en cas de fraude avérée, procéder à la fermeture définitive du compte."
+      },
+      "10": {
+        "title": "Mises à jour et notifications",
+        "text": "Nos conditions peuvent évoluer en fonction des besoins et de la réglementation. Vous serez notifié en cas de mise à jour majeure et votre utilisation continue vaudra acceptation des nouvelles règles."
+      }
+    }
+  },
+  "footer": {
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d’utilisation du service",
+    "rights": "Tous droits réservés"
+  },
+  "qr": {
+    "download-line1": "Télécharger ",
+    "download-line2": "l’application Wespee"
+  },
+  "cta": {
+    "download": "Télécharger l’application"
+  },
+  "download": {
+    "title": "Obtenez l’application\nWespee",
+    "titleDesktop-line1": "Obtenez",
+    "titleDesktop-line2": "l’application",
+    "titleDesktop-line3": "Wespee",
+    "subtitle": "Téléchargez l’application",
+
+    "appStore": {
+      "small": "Télécharger sur le",
+      "big": "App Store"
+    },
+
+    "playStore": {
+      "small": "Disponible sur le",
+      "big": "Google Play"
+    },
+
+    "qrText-line1": "Scannez le QR code",
+    "qrText-line2": "pour télécharger",
+    "qrText-line3": "l’application"
+  }
+
+}

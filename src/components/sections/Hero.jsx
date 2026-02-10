@@ -34,7 +34,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Hooks React
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Images et composants
 import iPhone from "../../assets/imgs/iPhone.png";
@@ -63,6 +63,9 @@ export default function Hero() {
   // État pour savoir si l'animation du titre est terminée
   // Permet de déclencher les animations suivantes
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
+  const descriptionRef = useRef(null);
+  const imagesLayerRef = useRef(null);
+  const [iphoneGapStyle, setIphoneGapStyle] = useState({});
 
   // ---------------------------------------------------------------------------
   // ANIMATIONS AU SCROLL
@@ -100,6 +103,46 @@ export default function Hero() {
   const screenWidth = dimensions.width;
   const screenHeight = dimensions.height;
 
+  // GAP FIXE 10vh entre le texte et l'iPhone (mobile/tablet < 768px)
+  // On mesure le vrai textBottom via useRef, puis on positionne l'iPhone
+  // à textBottom + 10% de l'écran. Recalculé au resize et après l'animation titre.
+  useEffect(() => {
+    if (!titleAnimationComplete || screenWidth >= 2000 || screenHeight === 0) {
+      setIphoneGapStyle({});
+      return;
+    }
+    const recalculate = () => {
+      if (!descriptionRef.current || !imagesLayerRef.current) return;
+      const textBottom = descriptionRef.current.getBoundingClientRect().bottom;
+      // Le CSS top est relatif au containing block (images layer), pas au viewport.
+      // On soustrait le top du containing block pour compenser le décalage navbar.
+      const containerTop = imagesLayerRef.current.getBoundingClientRect().top;
+      // Gap texte → iPhone : breakpoints par appareil
+      let gapTextToIphone;
+      if (screenWidth < 380) gapTextToIphone = 35;        // iPhone SE
+      else if (screenWidth < 350) gapTextToIphone = 45;   // en dessous de 300
+      else if (screenWidth < 380) gapTextToIphone = 20;   // en dessous de 380
+      else if (screenWidth < 400) gapTextToIphone = 45;   // iPhone 12/13
+      else if (screenWidth < 430) gapTextToIphone = 30;   // iPhone 14
+      else if (screenWidth < 450) gapTextToIphone = 47;   // iPhone 14 Pro Max
+      else if (screenWidth < 600) gapTextToIphone = 65;   // Pixel 7, Samsung
+      else if (screenWidth < 770) gapTextToIphone = 30;  // Grand mobile
+      else if (screenWidth < 830) gapTextToIphone = 40;  // iPad Mini (768)
+      else if (screenWidth < 920) gapTextToIphone = 40;  // iPad Air (820)
+      else if (screenWidth < 1030) gapTextToIphone = 40; // iPad Pro (834)
+      else if (screenWidth < 1450) gapTextToIphone = 40; // iPad Pro (834)
+      else if (screenWidth < 1750) gapTextToIphone = 40; // iPad Pro (8340
+      else gapTextToIphone = 70;                          // Desktop
+      setIphoneGapStyle({ top: `${Math.round(textBottom + gapTextToIphone - containerTop)}px`, bottom: 'auto' });
+    };
+    const timer = setTimeout(recalculate, 50);
+    window.addEventListener('resize', recalculate);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', recalculate);
+    };
+  }, [titleAnimationComplete, screenWidth, screenHeight]);
+
   // ---------------------------------------------------------------------------
   // ANIMATION DE L'IMAGE "VISION" (Effet zoom au scroll)
   // ---------------------------------------------------------------------------
@@ -110,15 +153,39 @@ export default function Hero() {
   const peopleWidth = useTransform(
     scrollY,
     [0, 800],
-    [screenWidth < 640 ? screenWidth * 0.89 : 400, screenWidth]
+    [screenWidth < 640 ? screenWidth * 0.88 : screenWidth < 1024 ? screenWidth * 0.55 : 400, screenWidth]
   );
 
   // Hauteur de l'image Vision selon le scroll
   const peopleHeight = useTransform(
     scrollY,
     [0, 800],
-    [screenWidth < 640 ? 350 : 400, screenHeight]
+    [screenWidth < 640 ? screenHeight * 0.55 : screenWidth < 1024 ? 450 : 430, screenHeight]
   );
+
+  // Position verticale animée du conteneur Vision
+  // S'anime de l'offset initial vers 0 (plein écran) au scroll
+  // Gap iPhone → Vision : breakpoints par appareil (mobile uniquement)
+  const getVisionBottomStart = () => {
+    if (screenWidth < 350) return "7%";        // en dessous de 300
+    if (screenWidth < 380) return "8%";        // iPhone SE
+    if (screenWidth < 400) return "6%";         // iPhone 12/13
+    if (screenWidth < 415) return "10%";         // pixel 7
+    if (screenWidth < 430) return "14%";        // iPhone 14
+    if (screenWidth < 450) return "10%";        // iPhone 14 Pro Max
+    if (screenWidth < 600) return "9%";         // Pixel 7, Samsung
+    if (screenWidth < 770) return "6%";        // Grand mobile
+    if (screenWidth < 830) return "20%";        // iPad Mini (768)
+    if (screenWidth < 920) return "27%";        // iPad Air (820)
+    if (screenWidth < 1030) return "-1%";       // iPad Pro (834)
+    if (screenWidth < 1450) return "20%";        // Petits desktops
+    if (screenWidth < 1750) return "-2%";        // MacBook 16" (~1728px)
+    return "12%";                                // Écrans 27"+ (1920px+)
+  };
+  const visionBottom = useTransform(scrollY, [0, 800], [getVisionBottomStart(), "0%"]);
+
+  // Opacité du texte Hero : disparaît au scroll pour laisser place au texte Vision
+  const heroTextOpacity = useTransform(scrollY, [200, 500], [1, 0], { clamp: true });
 
   // Opacité du overlay sombre sur la Vision
   const visionOverlayOpacity = useTransform(
@@ -237,8 +304,8 @@ export default function Hero() {
               COUCHE 1 : CONTENU TEXTE
               Titre, tagline et description
               ================================================================= */}
-          <div className="relative z-10 h-full flex flex-col items-center pt-8 sm:pt-12">
-            <div className="max-w-6xl mt-8 md:mt-2 mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+          <motion.div style={{ opacity: heroTextOpacity }} className="relative z-20 h-full flex flex-col items-center pt-0 sm:pt-6 md:pt-14">
+            <div className="max-w-6xl mt-0 md:mt-2 mx-auto px-7 sm:px-6 lg:px-8 text-center w-full">
 
               {/* Conteneur des animations */}
               <motion.div
@@ -247,9 +314,9 @@ export default function Hero() {
                 animate="visible"
                 onAnimationComplete={handleTitleAnimationComplete}
               >
-                {/* Tagline : "Mobile Money, reimagined." */}
+                {/* Tagline */}
                 <motion.p
-                  className="text-[17px] sm:text-[18px] md:text-[20px] font-athletics tracking-wide mb-3 sm:mb-4"
+                  className="mt-[20px] sm:mt-0 text-[14px] sm:text-[16px] md:text-[20px] font-athletics tracking-wide mb-3 sm:mb-3 md:mb-4"
                   variants={taglineVariants}
                 >
                   {t("hero.tagline")}
@@ -257,7 +324,7 @@ export default function Hero() {
 
                 {/* Titre principal en 3 lignes animées */}
                 <motion.h1
-                  className="text-[clamp(2.625rem,5.25vw,3.15rem)] sm:text-5xl md:text-7xl lg:text-8xl xl:text-[90px] font-athletics font-medium leading-[1.1] tracking-tight text-black"
+                  className="text-[clamp(2.25rem,7vw,2.75rem)] sm:text-5xl md:text-7xl lg:text-8xl xl:text-[90px] font-athletics font-medium leading-[1.05] sm:leading-[1.1] tracking-tight text-black"
                 >
                   <motion.span className="block" variants={titleItemVariants}>
                     {t("hero.title.line1")}
@@ -272,22 +339,23 @@ export default function Hero() {
 
                 {/* Description sous le titre */}
                 <motion.p
-                  className="mt-2 sm:mt-4 mb-1 text-[15px] sm:text-base md:text-lg max-w-xl mx-auto text-black/60 font-athletics font-normal px-4 sm:px-0"
+                  ref={descriptionRef}
+                  className="mt-[22px] sm:mt-3 md:mt-4 mb-0 text-[14px] sm:text-base md:text-lg max-w-xl mx-auto text-black/60 font-athletics font-normal px-4 sm:px-0"
                   variants={taglineVariants}
                 >
                   {t("hero.description.line1")}
-                  <br className="hidden sm:block" />
+                  <br />
                   {t("hero.description.line2")}
                 </motion.p>
               </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* =================================================================
               COUCHE 2 : ANIMATIONS (iPhone + Vision)
               Positionnée au-dessus du texte
               ================================================================= */}
-          <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden h-full w-full">
+          <div ref={imagesLayerRef} className="absolute inset-0 z-30 pointer-events-none overflow-hidden">
             <motion.div
               className="relative w-full h-full flex justify-center items-end"
               variants={imagesVariants}
@@ -296,22 +364,24 @@ export default function Hero() {
             >
               <div className="relative w-full flex justify-center items-end h-full">
 
-                {/* Image iPhone en arrière-plan */}
+                {/* iPhone — indépendant, ne zoome pas sur mobile */}
                 <img
                   src={iPhone}
                   alt="iPhone background"
-                  className="absolute md:bottom-[3%] bottom-[28%] w-[200px] sm:w-[260px] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
+                  style={iphoneGapStyle}
+                  className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[22%] xl:bottom-[24%] 2xl:bottom-[26%] left-1/2 -translate-x-1/2 w-[46vw] sm:w-[55vw] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
                 />
 
-                {/* Composant Vision qui s'agrandit au scroll */}
+                {/* Vision — s'agrandit au scroll */}
                 <motion.div
                   style={{
                     width: peopleWidth,
                     height: peopleHeight,
+                    bottom: visionBottom,
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                   }}
-                  className="absolute bottom-0 sm:bottom-[-10%] left-1/2 -translate-x-1/2 overflow-hidden z-30 pointer-events-auto"
+                  className="absolute left-1/2 -translate-x-1/2 z-20 md:z-30 pointer-events-auto overflow-hidden"
                 >
                   <Vision
                     overlayOpacity={visionOverlayOpacity}
@@ -323,22 +393,20 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* =================================================================
-              QR CODE (Desktop uniquement)
-              Widget fixe en bas à droite qui se rétracte au scroll
-              et disparaît progressivement à partir de la section Community
-              ================================================================= */}
-          <motion.div
-            variants={imagesVariants}
-            initial="hidden"
-            animate={titleAnimationComplete ? "visible" : "hidden"}
-            className="z-40"
-          >
-            <QRCode retracted={isRetracted} qrOpacity={qrOpacity} />
-          </motion.div>
-
         </div>
       </section>
+
+      {/* =====================================================================
+          QR CODE (Desktop uniquement)
+          Widget fixe en bas à droite — EN DEHORS du sticky pour z-index global
+          ===================================================================== */}
+      <motion.div
+        variants={imagesVariants}
+        initial="hidden"
+        animate={titleAnimationComplete ? "visible" : "hidden"}
+      >
+        <QRCode retracted={isRetracted} qrOpacity={qrOpacity} />
+      </motion.div>
 
       {/* =====================================================================
           BOUTON DOWNLOAD (Mobile uniquement)
@@ -348,7 +416,7 @@ export default function Hero() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden w-[90%] max-w-sm pointer-events-auto"
+        className="fixed bottom-6 left-0 right-0 z-50 md:hidden w-[90%] max-w-sm mx-auto pointer-events-auto"
       >
         <DownloadButton />
       </motion.div>
