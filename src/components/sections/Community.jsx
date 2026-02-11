@@ -291,7 +291,7 @@ export default function Community() {
           
           w-full : Pleine largeur (pas de max-width)
           ================================================================= */}
-      <div className="mt-12 sm:mt-16 md:mt-20 w-full lg:max-w-6xl lg:mx-auto lg:px-8">
+      <div className="mt-12 sm:mt-16 md:mt-20 w-full px-[10px]">
         
         {/* -----------------------------------------------------------------
             IMAGE DESKTOP
