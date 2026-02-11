@@ -142,7 +142,7 @@ export default function Conditions() {
 
             Pour modifier l'espacement, changez space-y-X
             ================================================================= */}
-        <div className="text-[13px] sm:text-[14px] md:text-[15px] text-black leading-relaxed space-y-4 sm:space-y-5 md:space-y-6 font-athletics">
+        <div className="text-[13px] sm:text-[14px] md:text-[15px] text-[#6D6D6D] leading-relaxed space-y-4 sm:space-y-5 md:space-y-6 font-athletics">
 
           {/* -----------------------------------------------------------------
               BOUCLE SUR LES 10 CONDITIONS
