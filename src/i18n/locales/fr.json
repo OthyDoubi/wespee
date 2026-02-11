@@ -60,12 +60,12 @@
     "title": "Conditions d’utilisation",
     "items": {
       "1": {
-        "title": "Acceptation des conditions",
+        "title": "<span style='color:#121212'>Acceptation des conditions</span>",
         "text": "En créant un compte et en utilisant Wespee, vous acceptez l'ensemble de nos conditions générales. Elles encadrent vos droits et obligations, ainsi que ceux de Wespee, pour garantir un service fiable et sécurisé."
       },
       "2": {
         "title": "Création de compte et éligibilité",
-        "text": "Pour vous inscrire, vous devez fournir un numéro de téléphone valide, un code de parrainage obligatoire et lier au moins un compte Mobile Money. Sans ces éléments, votre compte ne peut pas être activé."
+        "text": "<span style='color:#121212'>Pour vous inscrire, vous devez fournir un numéro de téléphone valide, un code de parrainage obligatoire et lier au moins un compte Mobile Money.</span> Sans ces éléments, votre compte ne peut pas être activé."
       },
       "3": {
         "title": "Sécurité et protection des transactions",
@@ -73,15 +73,15 @@
       },
       "4": {
         "title": "Frais et coûts associés",
-        "text": "Chaque transaction effectuée via Wespee entraîne un frais fixe de 50 XOF. Des frais supplémentaires peuvent s'appliquer en fonction des opérateurs Mobile Money ou agrégateurs partenaires."
+        "text": "<span style='color:#121212'>Chaque transaction effectuée via Wespee entraîne un frais fixe de 50 XOF.</span> Des frais supplémentaires peuvent s'appliquer en fonction des opérateurs Mobile Money ou agrégateurs partenaires."
       },
       "5": {
         "title": "Programme de parrainage",
-        "text": "Un utilisateur peut parrainer des filleuls grâce à un code unique. Le parrain perçoit 10 XOF sur chaque transaction réalisée par le filleul dès sa première utilisation effective de l'application."
+        "text": "Un utilisateur peut parrainer des filleuls grâce à un code unique. <span style='color:#121212'>Le parrain perçoit 10 XOF sur chaque transaction réalisée par le filleul dès sa première utilisation effective de l'application.</span>"
       },
       "6": {
         "title": "Utilisation et confidentialité des données",
-        "text": "Vos informations personnelles sont collectées uniquement pour fournir nos services et sont traitées conformément à la loi ivoirienne sur la protection des données personnelles. Nous ne revendons jamais vos données."
+        "text": "Vos informations personnelles sont collectées uniquement pour fournir nos services et sont traitées conformément à la loi ivoirienne sur la protection des données personnelles. <span style='color:#121212'>Nous ne revendons jamais vos données.</span>"
       },
       "7": {
         "title": "Responsabilité de l'utilisateur",
@@ -89,7 +89,7 @@
       },
       "8": {
         "title": "Gestion des comptes Mobile Money",
-        "text": "Un compte Mobile Money ne peut être lié qu'à un seul profil Wespee. Vous pouvez lier jusqu'à 4 comptes à votre profil, mais chaque ajout nécessite une authentification pour garantir votre sécurité."
+        "text": "<span style='color:#121212'>Un compte Mobile Money ne peut être lié qu'à un seul profil Wespee.</span> Vous pouvez lier jusqu'à 4 comptes à votre profil, mais chaque ajout nécessite une authentification pour garantir votre sécurité."
       },
       "9": {
         "title": "Contrôle et lutte contre la fraude",
