@@ -1118,6 +1118,7 @@
           "td": 1,
           "refId": "mhez1dby42545619",
           "sr": 1,
+          "hd": true,
           "ks": {
             "a": { "a": 0, "k": [0, 0] },
             "p": { "a": 0, "k": [0, 0] },
@@ -1141,6 +1142,7 @@
           "ind": 30,
           "ty": 0,
           "nm": "Calque_1",
+          "hd": true,
           "refId": "mhf0hg9nauc05zn7",
           "sr": 1,
           "ks": {
