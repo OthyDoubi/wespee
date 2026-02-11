@@ -60,12 +60,12 @@
     "title": "Terms of Use",
     "items": {
       "1": {
-        "title": "Acceptance of terms",
+        "title": "<span style='color:#121212'>Acceptance of terms</span>",
         "text": "By creating an account and using Wespee, you agree to all of our terms and conditions. They define your rights and obligations, as well as those of Wespee, to ensure a reliable and secure service."
       },
       "2": {
         "title": "Account creation and eligibility",
-        "text": "To register, you must provide a valid phone number, a mandatory referral code, and link at least one Mobile Money account. Without these elements, your account cannot be activated."
+        "text": "<span style='color:#121212'>To register, you must provide a valid phone number, a mandatory referral code, and link at least one Mobile Money account.</span> Without these elements, your account cannot be activated."
       },
       "3": {
         "title": "Security and transaction protection",
@@ -73,15 +73,15 @@
       },
       "4": {
         "title": "Fees and associated costs",
-        "text": "Each transaction made via Wespee incurs a fixed fee of 50 XOF. Additional fees may apply depending on Mobile Money operators or integrated partners."
+        "text": "<span style='color:#121212'>Each transaction made via Wespee incurs a fixed fee of 50 XOF.</span> Additional fees may apply depending on Mobile Money operators or integrated partners."
       },
       "5": {
         "title": "Referral program",
-        "text": "A user can refer others using a unique code. The referrer earns 10 XOF on each transaction made by the referred user during their first uses."
+        "text": "A user can refer others using a unique code. <span style='color:#121212'>The referrer earns 10 XOF on each transaction made by the referred user during their first uses.</span>"
       },
       "6": {
         "title": "Data usage and confidentiality",
-        "text": "Your personal information is handled in accordance with data protection regulations. Wespee never sells your data."
+        "text": "Your personal information is handled in accordance with data protection regulations. <span style='color:#121212'>Wespee never sells your data.</span>"
       },
       "7": {
         "title": "User responsibility",
@@ -89,7 +89,7 @@
       },
       "8": {
         "title": "Mobile Money account management",
-        "text": "You can link up to four Mobile Money accounts to your profile. Each addition requires authentication to ensure security."
+        "text": "<span style='color:#121212'>You can link up to four Mobile Money accounts to your profile.</span> Each addition requires authentication to ensure security."
       },
       "9": {
         "title": "Fraud monitoring and prevention",
