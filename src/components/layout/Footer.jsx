@@ -89,7 +89,7 @@ export default function Footer() {
               LIENS LÉGAUX
               Politique de confidentialité et Conditions d'utilisation
               ----------------------------------------------------------------- */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 text-md text-black/70">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4 text-md text-[#121212]">
             {/* Lien vers la politique de confidentialité */}
             <a href="#" className="hover:text-black transition font-athletics">
               {t("footer.privacy")}
