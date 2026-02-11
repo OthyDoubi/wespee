@@ -316,7 +316,7 @@ export default function Hero() {
               >
                 {/* Tagline */}
                 <motion.p
-                  className="mt-[20px] sm:mt-0 text-[14px] sm:text-[16px] md:text-[20px] font-athletics tracking-wide mb-3 sm:mb-3 md:mb-4"
+                  className="mt-[20px] sm:mt-0 text-[14px] sm:text-[16px] md:text-[20px] font-athletics tracking-wide mb-3 sm:mb-4 md:mb-6 lg:mb-8"
                   variants={taglineVariants}
                 >
                   {t("hero.tagline")}
