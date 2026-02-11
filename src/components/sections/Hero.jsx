@@ -65,7 +65,9 @@ export default function Hero() {
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   const descriptionRef = useRef(null);
   const imagesLayerRef = useRef(null);
+  const iphoneRef = useRef(null);
   const [iphoneGapStyle, setIphoneGapStyle] = useState({});
+  const [visionStartTop, setVisionStartTop] = useState(0);
 
   // ---------------------------------------------------------------------------
   // ANIMATIONS AU SCROLL
@@ -103,37 +105,39 @@ export default function Hero() {
   const screenWidth = dimensions.width;
   const screenHeight = dimensions.height;
 
-  // GAP FIXE 10vh entre le texte et l'iPhone (mobile/tablet < 768px)
-  // On mesure le vrai textBottom via useRef, puis on positionne l'iPhone
-  // à textBottom + 10% de l'écran. Recalculé au resize et après l'animation titre.
+  // GAP proportionnel entre le texte et l'iPhone
+  // Formule : 4.5% de la hauteur du viewport, borné entre 20px et 70px
+  // Recalculé au resize et après l'animation titre.
   useEffect(() => {
-    if (!titleAnimationComplete || screenWidth >= 2000 || screenHeight === 0) {
+    if (!titleAnimationComplete || screenHeight === 0) {
       setIphoneGapStyle({});
       return;
     }
     const recalculate = () => {
       if (!descriptionRef.current || !imagesLayerRef.current) return;
       const textBottom = descriptionRef.current.getBoundingClientRect().bottom;
-      // Le CSS top est relatif au containing block (images layer), pas au viewport.
-      // On soustrait le top du containing block pour compenser le décalage navbar.
       const containerTop = imagesLayerRef.current.getBoundingClientRect().top;
-      // Gap texte → iPhone : breakpoints par appareil
-      let gapTextToIphone;
-      if (screenWidth < 380) gapTextToIphone = 35;        // iPhone SE
-      else if (screenWidth < 350) gapTextToIphone = 45;   // en dessous de 300
-      else if (screenWidth < 380) gapTextToIphone = 20;   // en dessous de 380
-      else if (screenWidth < 400) gapTextToIphone = 45;   // iPhone 12/13
-      else if (screenWidth < 430) gapTextToIphone = 30;   // iPhone 14
-      else if (screenWidth < 450) gapTextToIphone = 47;   // iPhone 14 Pro Max
-      else if (screenWidth < 600) gapTextToIphone = 65;   // Pixel 7, Samsung
-      else if (screenWidth < 770) gapTextToIphone = 30;  // Grand mobile
-      else if (screenWidth < 830) gapTextToIphone = 40;  // iPad Mini (768)
-      else if (screenWidth < 920) gapTextToIphone = 40;  // iPad Air (820)
-      else if (screenWidth < 1030) gapTextToIphone = 40; // iPad Pro (834)
-      else if (screenWidth < 1450) gapTextToIphone = 40; // iPad Pro (834)
-      else if (screenWidth < 1750) gapTextToIphone = 40; // iPad Pro (8340
-      else gapTextToIphone = 70;                          // Desktop
-      setIphoneGapStyle({ top: `${Math.round(textBottom + gapTextToIphone - containerTop)}px`, bottom: 'auto' });
+
+      // =====================================================================
+      // 📏 GAP TEXTE → iPHONE (modifier ici)
+      // Formule : screenHeight × FACTEUR, borné entre MIN et MAX
+      // =====================================================================
+      const IPHONE_GAP_FACTOR = 0.045;   // ← facteur proportionnel (4.5% du viewport)
+      const IPHONE_GAP_MIN = 20;          // ← minimum en px
+      const IPHONE_GAP_MAX = 70;          // ← maximum en px
+      const gapTextToIphone = Math.max(IPHONE_GAP_MIN, Math.min(IPHONE_GAP_MAX, Math.round(screenHeight * IPHONE_GAP_FACTOR)));
+      const iphoneTop = Math.round(textBottom + gapTextToIphone - containerTop);
+      setIphoneGapStyle({ top: `${iphoneTop}px`, bottom: 'auto' });
+
+      // =====================================================================
+      // 📏 GAP TEXTE → VISION (modifier ici)
+      // Dérivé du gap iPhone × un multiplicateur
+      // =====================================================================
+      const VISION_GAP_MULTIPLIER = 2.2;  // ← Vision gap = iPhone gap × ce facteur
+      const gapTextToVision = Math.round(gapTextToIphone * VISION_GAP_MULTIPLIER);
+      // Position du HAUT de la Vision (comme l'iPhone, positionné par le haut)
+      const visionTop = Math.round(textBottom + gapTextToVision - containerTop);
+      setVisionStartTop(visionTop);
     };
     const timer = setTimeout(recalculate, 50);
     window.addEventListener('resize', recalculate);
@@ -164,25 +168,12 @@ export default function Hero() {
   );
 
   // Position verticale animée du conteneur Vision
-  // S'anime de l'offset initial vers 0 (plein écran) au scroll
-  // Gap iPhone → Vision : breakpoints par appareil (mobile uniquement)
-  const getVisionBottomStart = () => {
-    if (screenWidth < 350) return "7%";        // en dessous de 300
-    if (screenWidth < 380) return "8%";        // iPhone SE
-    if (screenWidth < 400) return "6%";         // iPhone 12/13
-    if (screenWidth < 415) return "10%";         // pixel 7
-    if (screenWidth < 430) return "14%";        // iPhone 14
-    if (screenWidth < 450) return "10%";        // iPhone 14 Pro Max
-    if (screenWidth < 600) return "9%";         // Pixel 7, Samsung
-    if (screenWidth < 770) return "6%";        // Grand mobile
-    if (screenWidth < 830) return "20%";        // iPad Mini (768)
-    if (screenWidth < 920) return "27%";        // iPad Air (820)
-    if (screenWidth < 1030) return "-1%";       // iPad Pro (834)
-    if (screenWidth < 1450) return "20%";        // Petits desktops
-    if (screenWidth < 1750) return "-2%";        // MacBook 16" (~1728px)
-    return "12%";                                // Écrans 27"+ (1920px+)
-  };
-  const visionBottom = useTransform(scrollY, [0, 800], [getVisionBottomStart(), "0%"]);
+  // Anime top de visionStartTop → 0 (plein écran) au scroll
+  const visionTop = useTransform(
+    scrollY,
+    [0, 800],
+    [visionStartTop, 0]
+  );
 
   // Opacité du texte Hero : disparaît au scroll pour laisser place au texte Vision
   const heroTextOpacity = useTransform(scrollY, [200, 500], [1, 0], { clamp: true });
@@ -366,10 +357,11 @@ export default function Hero() {
 
                 {/* iPhone — indépendant, ne zoome pas sur mobile */}
                 <img
+                  ref={iphoneRef}
                   src={iPhone}
                   alt="iPhone background"
                   style={iphoneGapStyle}
-                  className="absolute bottom-[12%] md:bottom-[20%] lg:bottom-[22%] xl:bottom-[24%] 2xl:bottom-[26%] left-1/2 -translate-x-1/2 w-[46vw] sm:w-[55vw] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
+                  className="absolute left-1/2 -translate-x-1/2 w-[46vw] sm:w-[55vw] md:w-[300px] h-auto z-10 opacity-90 shadow-2xl pointer-events-auto"
                 />
 
                 {/* Vision — s'agrandit au scroll */}
@@ -377,7 +369,7 @@ export default function Hero() {
                   style={{
                     width: peopleWidth,
                     height: peopleHeight,
-                    bottom: visionBottom,
+                    top: visionTop,
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                   }}
