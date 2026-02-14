@@ -1,4 +1,4 @@
-{ 
+{
   "navbar": {
     "banner": "Wespee is invite-only. Drop your code, get your friends on board, and earn 10 XOF every time they pay.",
     "cta": "Download the app"
@@ -11,32 +11,32 @@
       "highlight": "it’s your world."
     },
     "description": {
-      "line1": "Your money, differently. Better.",
-      "line2": "With Wespee: send, pay, enjoy."
+      "line1": "The easiest way to pay and get paid fast and securely",
+      "line2": "with your friends, family and thousands of people."
     }
   },
   "vision": {
     "tagline": "Wespee for everything, everywhere.",
-    "title-line1": "We are rethinking",
-    "title-line2":"how you use",
-    "title-line3":"mobile money",
-    "title-line4":"every day."
+    "title-line1": "Send and receive",
+    "title-line2": "money effortlessly",
+    "title-line3": "and",
+    "title-line4": "securely."
   },
   "security": {
     "header": {
       "tagline": "Wespee — Essential protection for your money.",
-      "title1": "Your new secure",
-      "title2": "shield."
+      "title1": "Your money deserves",
+      "title2": "better."
     },
     "cards": {
       "1": {
-        "text": "Every day, users fall victim to mobile money scams: fake SMS, \"customer service\" calls, identity theft… Why? Because with every transaction, your phone number circulates and can end up in the wrong hands. And often, that’s all a scammer needs."
+        "text": "Every day, thousands of people are targeted through mobile money. Fake texts, scam calls posing as support, identity takeovers... Why? Because with every payment, your phone number gets exposed and can end up in the wrong hands. And most of the time, that alone is enough for a scammer."
       },
       "2": {
-        "text": "To protect you, with Wespee your personal information stays confidential with every transaction. Sign up, choose a unique identifier that replaces your phone number, and use it to send and receive money. Simple and secure."
+        "text": "With your new payment identity, @YourTag, you can now send and receive money without exposing your personal details. So you're finally protected from phishing, identity theft, SIM swapping, and social engineering, the scams that impact thousands of mobile money users every day."
       },
       "3": {
-        "text": "Wespee is committed to protecting your data and transactions. Thanks to our next-generation security methods, your payments are safe and you stay at ease. Every transfer, purchase, and money send benefits from advanced protection designed to give you confidence every day.",
+        "text": "Security is a core value at Wespee. Our solutions use next-gen technology to deliver strong protection for your data and your money, built to meet the highest financial industry standards.",
         "caption": "Security is not a myth."
       }
     }
@@ -101,9 +101,9 @@
       }
     },
     "footer": {
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "rights": "All rights reserved"
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "rights": "All rights reserved"
     }
   },
   "footer": {
@@ -120,20 +120,16 @@
     "titleDesktop-line2": "the Wespee",
     "titleDesktop-line3": "app",
     "subtitle": "Download the application",
-
     "appStore": {
       "small": "Download on the",
       "big": "App Store"
     },
-
     "playStore": {
       "small": "Available on",
       "big": "Google Play"
     },
-
     "qrText-line1": "Scan the QR code",
     "qrText-line2": "to download",
     "qrText-line3": "the app"
   }
-
 }

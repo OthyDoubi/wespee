@@ -11,47 +11,47 @@
       "highlight": "it’s your world."
     },
     "description": {
-      "line1": "Ton argent, autrement. En mieux.",
-      "line2": "Avec Wespee : envoie, paye, profite."
+      "line1": "Le moyen simple de payer et d'être payé rapidement et en toute sécurité",
+      "line2": "avec vos amis, votre famille et des milliers de personnes."
     }
   },
   "vision": {
     "tagline": "Wespee pour tout et partout.",
-    "title-line1": "Nous repensons la",
-    "title-line2":"façon dont tu utilises",
-    "title-line3":"ton Mobile Money au",
-    "title-line4":"quotidien."
+    "title-line1": "Envoyez et recevez",
+    "title-line2": "de l'argent en toute",
+    "title-line3": "simplicité et en",
+    "title-line4": "toute sécurité!"
   },
   "security": {
     "header": {
       "tagline": "Wespee — La protection essentielle pour votre argent.",
-      "title1": "Ton nouveau bouclier",
-      "title2" :"sécurisé."
+      "title1": "Votre argent mérite",
+      "title2": "mieux."
     },
     "cards": {
       "1": {
-        "text": "Chaque jour, des utilisateurs se font piéger sur le mobile money : faux SMS, appels « service client », usurpations d’identité… Pourquoi ? Parce qu’à chaque transaction, votre numéro de téléphone circule et peut finir entre de mauvaises mains. Et c’est souvent tout ce dont un fraudeur a besoin pour vous piéger."
+        "text": "Chaque jour, des milliers d'utilisateurs se font piéger sur le mobile money. Faux SMS, appels se faisant passer pour le service client, usurpations d'identité... Pourquoi ? Parce qu'à chaque transaction, votre numéro de téléphone circule et peut tomber entre de mauvaises mains. Et bien souvent, c'est tout ce dont un fraudeur a besoin."
       },
       "2": {
-        "text": "Pour te protéger, désormais avec Wespee, tes informations personnelles restent confidentielles à chaque transaction. Inscris-toi, choisis l’identifiant unique de ton choix, qui remplacera ton numéro de téléphone lors de tes transactions. Partage-le pour envoyer et recevoir de l’argent. C’est simple et sécurisé."
+        "text": "Grâce à ta nouvelle identité de paiement, @TonTag, tu peux désormais payer et recevoir de l'argent sans exposer tes données personnelles, ce qui te protège enfin contre le phishing, le vol d'identité, le SIM swapping et l'ingénierie sociale, ces fraudes qui font chaque jour des milliers de victimes dans l'univers du Mobile Money."
       },
       "3": {
-        "text": "Wespee s’engage à protéger vos données et vos transactions. Grâce à nos méthodes de sécurité NextGen, vos paiements sont sûrs et vous gardez l’esprit tranquille. Chaque transfert, chaque achat et chaque envoi d’argent bénéficie d’une protection avancée, conçue pour vous garantir confiance et sérénité au quotidien.",
+        "text": "La sécurité est une valeur fondamentale chez Wespee. Nos solutions intègrent des technologies NextGen de pointe, garantissant une protection sérieuse de tes données et de ton argent, dans le respect des standards les plus exigeants du domaine financier.",
         "caption": "La sécurité n'est pas un mythe."
       }
     }
   },
   "features": {
-    "tagline": "Tout pour te faire gagner en temps",
+    "tagline": "La simplicité et la facilité d’utilisation de votre argent au quotidien",
     "title-line1": "Une App",
-    "title-line2" : "pour tout.",
-    "description": "Désormais, tu peux unifier tous tes comptes mobile money en un seul endroit pour payer et être payé sans te soucier de l'opérateur. Tu peux également dépenser et suivre tes dépenses sans passer par plusieurs applications. Avec Wespee, tout se fait dans une seule app pour te faire gagner du temps.",
-    "disclaimer": "*Wespee ne peut en aucun cas prélever de l'argent sur vos comptes Mobile Money sans votre accord."
+    "title-line2": "pour tout.",
+    "description": "Désormais, tu peux unifier tous tes comptes mobile money en un seul endroit pour payer et être payé sans te soucier de l’opérateur. Tu peux également dépenser et suivre tes dépenses sans passer par plusieurs applications. Avec Wespee, tout se fait dans une seule app pour te faire gagner du temps.",
+    "disclaimer": "*Wespee ne peut en aucun cas prélever de l’argent sur vos comptes Mobile Money sans votre accord."
   },
   "connectivity": {
-    "tagline": "Fait plus avec ton argent",
-    "title": "Encore plus<br/>connectée",
-    "description": "Wespee, c’est ton nouveau monde : plus moderne, plus fun et avec une expérience utilisateur unique. Découvre de nouvelles fonctionnalités et des façons innovantes d’utiliser ton argent.<br/><br/>Tous tes services sont connectés entre eux, dans un seul écosystème qui simplifie ta vie et t’offre plus de liberté au quotidien."
+    "tagline": "L’accès à Wespee se fait uniquement par parrainage : invite tes proches et reçois 10F à chaque transaction qu’ils effectuent",
+    "title": "Une expérience <br/> plus social",
+    "description": "Une expérience de paiement plus sociale et plus humaineLes paiements ne sont pas juste des transactions — ce sont des moments entre des personnes qui comptent. Wespee ajoute une dimension sociale à tes transferts pour que l’argent reste personnel, chaleureux et connecté — pas froid ni impersonnel. <br/><br/> Avec Wespee, tu peux personnaliser la façon dont tu envoies et reçois de l’argent : ajoute des notes significatives à tes transactions pour rester proche des personnes qui comptent pour toi, et partage ton Tag Wespee (Wespee.me/mawa22k) pour demander de l’argent facilement et être payé plus rapidement."
   },
   "community": {
     "download": "Télécharger l’application Wespee"
@@ -119,20 +119,16 @@
     "titleDesktop-line2": "l’application",
     "titleDesktop-line3": "Wespee",
     "subtitle": "Téléchargez l’application",
-
     "appStore": {
       "small": "Télécharger sur le",
       "big": "App Store"
     },
-
     "playStore": {
       "small": "Disponible sur le",
       "big": "Google Play"
     },
-
     "qrText-line1": "Scannez le QR code",
     "qrText-line2": "pour télécharger",
     "qrText-line3": "l’application"
   }
-
 }
